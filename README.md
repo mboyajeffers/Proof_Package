@@ -39,6 +39,7 @@ This repository contains **proof of capability**: real analytics outputs I've ge
 | Industry | Folder | Sample KPIs |
 |----------|--------|-------------|
 | [Finance](./Finance/) | Stock analytics, risk metrics | VaR, Sharpe Ratio, Beta, Max Drawdown |
+| [Crypto](./Crypto/) | Cryptocurrency analytics | Portfolio performance, volatility, correlation |
 | [Betting](./Betting/) | Sports betting analytics | GGR, Hold %, Player LTV, Bonus ROI |
 | [Sports](./Sports/) | Sports data intelligence | Win rates, performance trends, market analysis |
 | [Compliance](./Compliance/) | AML/KYC analytics | Transaction patterns, risk scoring, audit trails |
@@ -113,18 +114,19 @@ Netflix_Analysis/
 ```
 Proof_Package/
 ├── README.md                    # You are here
+│
 ├── Netflix_Analysis/            # 23.6M row streaming analytics
 ├── Enterprise_Scale/            # 7.7M row Disney media analytics
 ├── Finance/                     # Stock & financial risk analytics
 ├── Betting/                     # Sports betting analytics
 ├── Sports/                      # Sports data intelligence
 ├── Compliance/                  # AML/KYC compliance analytics
+├── Crypto/                      # Cryptocurrency analytics
 ├── Solar/                       # Renewable energy analytics
 ├── Weather/                     # Climate & weather analytics
-├── docs/                        # Methodology, architecture, KPI catalog
-├── configs/                     # Schema contracts, validation rules
-├── generate_*.py                # Report generation scripts
-└── LinkedIn_Posts_Ready_To_Copy.md  # Content for professional sharing
+│
+├── scripts/                     # Report generation scripts
+└── misc/                        # docs, configs, data, src, tests
 ```
 
 ---
