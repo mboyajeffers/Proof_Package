@@ -81,7 +81,6 @@ All analytics in this portfolio were generated using **CMS Enterprise**, a platf
 | Currencies | 32 supported with real-time FX |
 | Countries | 14 supported |
 | API Endpoints | 30 REST blueprints |
-| Test Coverage | 22 passing tests |
 
 **Architecture**: Python/Flask backend, GCP infrastructure, SQLite metadata, GCS storage, automated PDF generation, three-tier deployment (PROD → DEV → LOCAL).
 
