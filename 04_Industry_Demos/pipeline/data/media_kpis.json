@@ -1,0 +1,287 @@
+{
+  "NFLX": {
+    "metadata": {
+      "ticker": "NFLX",
+      "company_name": "Netflix",
+      "cik": "0001065280",
+      "generated": "2026-02-01T10:00:13.655122+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001065280.json",
+        "stock_prices": "Yahoo Finance (NFLX)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Streaming Analysis"
+    },
+    "stock_performance": {
+      "total_return": 787.34,
+      "annualized_return": 24.45,
+      "volatility": 41.61,
+      "sharpe_ratio": 0.59,
+      "sortino_ratio": 0.77,
+      "var_95": -3.65,
+      "var_99": -6.52,
+      "max_drawdown": -75.95,
+      "positive_days_pct": 51.1,
+      "best_day": 19.03,
+      "worst_day": -35.12,
+      "trading_days": 2514,
+      "years_analyzed": 10.0
+    },
+    "financials": {
+      "revenue": {
+        "value": 45183036000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "net_income": {
+        "value": 10981201000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "total_assets": {
+        "value": 55596993000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "total_liabilities": {
+        "value": 28981505000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "stockholders_equity": {
+        "value": 26615488000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "operating_income": {
+        "value": 13326603000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "cash": {
+        "value": 9033681000,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      },
+      "eps": {
+        "value": 2.58,
+        "date": "2025-12-31",
+        "form": "10-K",
+        "accession": "0001065280-26-000034"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2016-02-01",
+      "end_date": "2026-01-30",
+      "total_observations": 2515,
+      "latest_close": 83.49
+    }
+  },
+  "DIS": {
+    "metadata": {
+      "ticker": "DIS",
+      "company_name": "Disney",
+      "cik": "0001744489",
+      "generated": "2026-02-01T10:00:14.599883+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001744489.json",
+        "stock_prices": "Yahoo Finance (DIS)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Media Conglomerate"
+    },
+    "stock_performance": {
+      "total_return": 28.62,
+      "annualized_return": 2.55,
+      "volatility": 28.44,
+      "sharpe_ratio": 0.09,
+      "sortino_ratio": 0.12,
+      "var_95": -2.53,
+      "var_99": -4.37,
+      "max_drawdown": -60.72,
+      "positive_days_pct": 49.8,
+      "best_day": 14.41,
+      "worst_day": -13.16,
+      "trading_days": 2514,
+      "years_analyzed": 10.0
+    },
+    "financials": {
+      "revenue": {
+        "value": 94425000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "net_income": {
+        "value": 12404000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "total_assets": {
+        "value": 197514000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "stockholders_equity": {
+        "value": 109869000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "operating_income": {
+        "value": 17551000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "cash": {
+        "value": 5695000000,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      },
+      "eps": {
+        "value": 6.88,
+        "date": "2025-09-27",
+        "form": "10-K",
+        "accession": "0001744489-25-000155"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2016-02-01",
+      "end_date": "2026-01-30",
+      "total_observations": 2515,
+      "latest_close": 112.8
+    }
+  },
+  "SPOT": {
+    "metadata": {
+      "ticker": "SPOT",
+      "company_name": "Spotify",
+      "cik": "0001639920",
+      "generated": "2026-02-01T10:00:15.423130+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001639920.json",
+        "stock_prices": "Yahoo Finance (SPOT)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Audio Streaming"
+    },
+    "stock_performance": {
+      "total_return": 235.78,
+      "annualized_return": 16.77,
+      "volatility": 46.59,
+      "sharpe_ratio": 0.36,
+      "sortino_ratio": 0.53,
+      "var_95": -4.26,
+      "var_99": -7.51,
+      "max_drawdown": -80.51,
+      "positive_days_pct": 52.0,
+      "best_day": 16.17,
+      "worst_day": -16.76,
+      "trading_days": 1968,
+      "years_analyzed": 7.8
+    },
+    "financials": {},
+    "stock_data_summary": {
+      "start_date": "2018-04-03",
+      "end_date": "2026-01-30",
+      "total_observations": 1969,
+      "latest_close": 500.35
+    }
+  },
+  "WBD": {
+    "metadata": {
+      "ticker": "WBD",
+      "company_name": "Warner Bros Discovery",
+      "cik": "0001437107",
+      "generated": "2026-02-01T10:00:16.419298+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001437107.json",
+        "stock_prices": "Yahoo Finance (WBD)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Legacy Media"
+    },
+    "stock_performance": {
+      "total_return": -0.36,
+      "annualized_return": -0.04,
+      "volatility": 47.58,
+      "sharpe_ratio": -0.0,
+      "sortino_ratio": -0.0,
+      "var_95": -4.22,
+      "var_99": -7.81,
+      "max_drawdown": -91.32,
+      "positive_days_pct": 49.8,
+      "best_day": 28.95,
+      "worst_day": -27.45,
+      "trading_days": 2514,
+      "years_analyzed": 10.0
+    },
+    "financials": {
+      "revenue": {
+        "value": 39321000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "net_income": {
+        "value": -11311000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "total_assets": {
+        "value": 104560000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "total_liabilities": {
+        "value": 69622000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "stockholders_equity": {
+        "value": 34037000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "operating_income": {
+        "value": -10032000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "cash": {
+        "value": 5312000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      },
+      "eps": {
+        "value": -4.62,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001437107-25-000031"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2016-02-01",
+      "end_date": "2026-01-30",
+      "total_observations": 2515,
+      "latest_close": 27.54
+    }
+  }
+}

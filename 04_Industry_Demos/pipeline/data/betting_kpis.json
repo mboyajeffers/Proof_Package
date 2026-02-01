@@ -1,0 +1,257 @@
+{
+  "DKNG": {
+    "metadata": {
+      "ticker": "DKNG",
+      "company_name": "DraftKings",
+      "cik": "0001883685",
+      "generated": "2026-02-01T10:00:34.658284+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001883685.json",
+        "stock_prices": "Yahoo Finance (DKNG)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Sports Betting"
+    },
+    "stock_performance": {
+      "total_return": 180.71,
+      "annualized_return": 17.2,
+      "volatility": 63.26,
+      "sharpe_ratio": 0.27,
+      "sortino_ratio": 0.4,
+      "var_95": -5.79,
+      "var_99": -9.71,
+      "max_drawdown": -85.73,
+      "positive_days_pct": 47.9,
+      "best_day": 17.27,
+      "worst_day": -27.82,
+      "trading_days": 1638,
+      "years_analyzed": 6.5
+    },
+    "financials": {
+      "revenue": {
+        "value": 4767699000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "net_income": {
+        "value": -507285000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "total_assets": {
+        "value": 4283725000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "total_liabilities": {
+        "value": 3273099000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "stockholders_equity": {
+        "value": 1010626000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "operating_income": {
+        "value": -608999000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "cash": {
+        "value": 788287000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      },
+      "eps": {
+        "value": -1.05,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001883685-25-000010"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2019-07-25",
+      "end_date": "2026-01-30",
+      "total_observations": 1639,
+      "latest_close": 27.51
+    }
+  },
+  "PENN": {
+    "metadata": {
+      "ticker": "PENN",
+      "company_name": "Penn Entertainment",
+      "cik": "0000921738",
+      "generated": "2026-02-01T10:00:35.741461+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000921738.json",
+        "stock_prices": "Yahoo Finance (PENN)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "iGaming"
+    },
+    "stock_performance": {
+      "total_return": -8.74,
+      "annualized_return": -0.91,
+      "volatility": 60.42,
+      "sharpe_ratio": -0.02,
+      "sortino_ratio": -0.02,
+      "var_95": -4.83,
+      "var_99": -8.92,
+      "max_drawdown": -90.59,
+      "positive_days_pct": 48.7,
+      "best_day": 34.8,
+      "worst_day": -44.8,
+      "trading_days": 2514,
+      "years_analyzed": 10.0
+    },
+    "financials": {
+      "revenue": {
+        "value": 6578100000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "net_income": {
+        "value": -311500000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "total_assets": {
+        "value": 15261700000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "total_liabilities": {
+        "value": 12403300000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "stockholders_equity": {
+        "value": 2862700000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "operating_income": {
+        "value": 72500000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "cash": {
+        "value": 706600000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      },
+      "eps": {
+        "value": -2.05,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0000921738-25-000008"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2016-02-01",
+      "end_date": "2026-01-30",
+      "total_observations": 2515,
+      "latest_close": 12.84
+    }
+  },
+  "CZR": {
+    "metadata": {
+      "ticker": "CZR",
+      "company_name": "Caesars",
+      "cik": "0001590895",
+      "generated": "2026-02-01T10:00:36.692581+00:00",
+      "data_sources": {
+        "financials": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001590895.json",
+        "stock_prices": "Yahoo Finance (CZR)"
+      },
+      "data_disclaimer": "ALL DATA FROM REAL PUBLIC APIs - NO SIMULATION",
+      "focus": "Casino Omnichannel"
+    },
+    "stock_performance": {
+      "total_return": 100.39,
+      "annualized_return": 7.21,
+      "volatility": 60.16,
+      "sharpe_ratio": 0.12,
+      "sortino_ratio": 0.16,
+      "var_95": -5.03,
+      "var_99": -9.46,
+      "max_drawdown": -89.78,
+      "positive_days_pct": 50.4,
+      "best_day": 44.16,
+      "worst_day": -37.51,
+      "trading_days": 2514,
+      "years_analyzed": 10.0
+    },
+    "financials": {
+      "revenue": {
+        "value": 11245000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "net_income": {
+        "value": -278000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "total_assets": {
+        "value": 32590000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "total_liabilities": {
+        "value": 28214000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "stockholders_equity": {
+        "value": 4157000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "operating_income": {
+        "value": 2304000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "cash": {
+        "value": 866000000,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      },
+      "eps": {
+        "value": -1.29,
+        "date": "2024-12-31",
+        "form": "10-K",
+        "accession": "0001590895-25-000068"
+      }
+    },
+    "stock_data_summary": {
+      "start_date": "2016-02-01",
+      "end_date": "2026-01-30",
+      "total_observations": 2515,
+      "latest_close": 20.7
+    }
+  }
+}
