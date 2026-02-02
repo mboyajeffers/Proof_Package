@@ -24,7 +24,7 @@ from public APIs with quality gates, validation frameworks, and production disci
 |---------|---------------------|
 | [**pipelines/**](#pipelines) | End-to-end ETL with public APIs (SEC, NIST, CMS, EIA, USASpending) |
 | [**demos/**](#demos) | Standalone code samples: financial metrics, FX conversion, validation |
-| [**reports/**](#reports) | Sample outputs: executive summaries, methodology docs |
+| [**reports/**](#reports) | Sample outputs: executive summaries, methodology docs, industry analysis |
 
 ---
 
@@ -156,7 +156,8 @@ Data-Engineering-Portfolio/
 │   └── data-validation/          # Schema validation
 ├── reports/
 │   ├── founder_summaries/        # One-page project summaries
-│   └── executive_reports/        # Detailed analysis PDFs
+│   ├── executive_reports/        # Detailed analysis PDFs
+│   └── industry_analysis/        # Finance, Compliance, Energy reports
 └── _archive/                     # Previous versions
 ```
 
