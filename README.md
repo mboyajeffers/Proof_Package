@@ -1,90 +1,136 @@
-# Data Engineering Portfolio
+# Mboya Jeffers — Data Engineering Portfolio
 
-Production-grade data pipelines demonstrating ETL patterns, public API integration,
-star schema modeling, and data quality practices.
+Production-grade data pipelines, analytics frameworks, and engineering patterns.
+Built for hiring managers and technical leads evaluating data engineering capabilities.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://linkedin.com/in/mboya-jeffers-6377ba325)
-[![Email](https://img.shields.io/badge/Email-Contact-green)](mailto:MboyaJeffers9@gmail.com)
+[![Email](https://img.shields.io/badge/Email-MboyaJeffers9%40gmail.com-green)](mailto:MboyaJeffers9@gmail.com)
 
 ---
 
-## Projects
+## About Me
 
-Each pipeline is self-contained, uses real public APIs, and produces verifiable outputs.
+Data Engineer with full-stack pipeline ownership — from raw data ingestion through
+star schema modeling to automated reporting. I build systems that process real data
+from public APIs with quality gates, validation frameworks, and production discipline.
 
-### Federal Awards Analysis
-**Source:** USASpending.gov API
-**Scale:** 100K+ federal awards processed
-**Pattern:** Star schema dimensional model (agency, recipient, geography dimensions)
-**Verification:** [api.usaspending.gov](https://api.usaspending.gov)
+**Target Role:** Senior Data Engineer / Analytics Engineer ($125K-$200K+, Remote)
+
+---
+
+## Portfolio Overview
+
+| Section | What It Demonstrates |
+|---------|---------------------|
+| [**pipelines/**](#pipelines) | End-to-end ETL with public APIs (SEC, NIST, CMS, EIA, USASpending) |
+| [**demos/**](#demos) | Standalone code samples: financial metrics, FX conversion, validation |
+| [**reports/**](#reports) | Sample outputs: executive summaries, methodology docs |
+
+---
+
+## Pipelines
+
+Production pipelines using real government and financial APIs. Each pipeline includes:
+- Data extraction with rate limiting
+- Schema validation and cleaning
+- Star schema dimensional modeling
+- Quality gates (completeness, uniqueness)
+- JSON metrics output
+
+| Pipeline | Data Source | Scale | Verification |
+|----------|-------------|-------|--------------|
+| **Federal Awards** | USASpending.gov | 100K+ awards | [api.usaspending.gov](https://api.usaspending.gov) |
+| **SEC Financial** | EDGAR XBRL | 36 companies, 1M+ facts | [data.sec.gov](https://www.sec.gov/cgi-bin/browse-edgar) |
+| **Healthcare Quality** | CMS Hospital Compare | 942 hospitals | [data.cms.gov](https://data.cms.gov/provider-data/) |
+| **Energy Grid** | EIA-930 | 7 balancing authorities | [api.eia.gov](https://www.eia.gov/opendata/) |
+| **Vulnerability Scoring** | NIST NVD + CISA KEV | 2K CVEs | [nvd.nist.gov](https://nvd.nist.gov/developers) |
 
 ```bash
 cd pipelines/federal_awards
 python pipeline.py
 ```
 
-### SEC Financial Intelligence
-**Source:** SEC EDGAR XBRL API
-**Scale:** 36 Fortune 500 companies, 1M+ financial facts
-**Pattern:** XBRL extraction, financial metrics (revenue, net income, EPS)
-**Verification:** [data.sec.gov](https://www.sec.gov/cgi-bin/browse-edgar)
+---
 
-```bash
-cd pipelines/sec_financial
-python pipeline.py
+## Demos
+
+Standalone, interview-ready code demonstrating core data engineering skills.
+
+### financial-metrics/
+Risk and portfolio analytics calculations.
+
+```python
+from risk_metrics import calculate_all_metrics
+metrics = calculate_all_metrics(price_series, benchmark_series)
+print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
+print(f"95% VaR: {metrics['var_95_parametric']:.2%}")
 ```
 
-### Healthcare Quality Metrics
-**Source:** CMS Hospital Compare API (Data.Medicare.gov)
-**Scale:** 942 hospitals analyzed across 10 states
-**Pattern:** Ownership-type benchmarking, quality score aggregation
-**Verification:** [data.cms.gov](https://data.cms.gov/provider-data/)
+**Includes:** VaR (parametric/historical), Sharpe Ratio, Sortino Ratio, Maximum Drawdown, Beta
 
-```bash
-cd pipelines/healthcare_quality
-python pipeline.py
+### etl-pipeline-template/
+Configurable ETL framework with quality gates.
+
+```python
+from pipeline import ETLPipeline, PipelineConfig
+
+config = PipelineConfig(
+    name='my_etl',
+    source_type='csv',
+    source_path='data/input.csv',
+    output_path='data/output.csv',
+    schema={'id': 'int', 'amount': 'float'}
+)
+
+pipeline = ETLPipeline(config)
+metrics = pipeline.run(key_columns=['id'])
 ```
 
-### Energy Grid Monitoring
-**Source:** EIA-930 API (U.S. Energy Information Administration)
-**Scale:** 5K records from 7 balancing authorities
-**Pattern:** Time-series aggregation, renewables percentage tracking
-**Verification:** [api.eia.gov](https://www.eia.gov/opendata/)
+### multi-currency-fx/
+Currency conversion with ECB primary + fallback sources.
 
-```bash
-cd pipelines/energy_grid
-python pipeline.py
+```python
+from fx_converter import FXConverter
+
+converter = FXConverter()
+result = converter.convert(1000, 'USD', 'EUR')
+# 1000 USD = 918.45 EUR (rate: 0.91845, source: ECB)
 ```
 
-### Vulnerability Prioritization
-**Source:** NIST NVD + CISA KEV + FIRST EPSS APIs
-**Scale:** 2K CVEs with priority scoring
-**Pattern:** Multi-source enrichment, risk-based prioritization
-**Verification:** [nvd.nist.gov](https://nvd.nist.gov/developers)
+### data-validation/
+Schema validation and quality scoring framework.
 
-```bash
-cd pipelines/vulnerability_scoring
-python pipeline.py
+```python
+from validator import DataValidator
+
+validator = DataValidator(schema={'id': {'type': 'int', 'nullable': False}})
+validator.add_range_check('age', min_val=0, max_val=120)
+validator.add_pattern_check('email', r'^[\w\.-]+@[\w\.-]+\.\w+$')
+
+report = validator.validate(df)
+print(f"Quality Score: {report.quality_score:.1%}")
 ```
 
 ---
 
-## Tech Stack
+## Technical Skills Demonstrated
 
-| Category | Technologies |
-|----------|--------------|
-| Language | Python 3.9+ |
-| Data | pandas, numpy |
-| APIs | requests (rate limiting, retry logic) |
-| Output | JSON, CSV, Parquet |
-| Quality | Data validation gates, completeness checks |
+| Category | Skills |
+|----------|--------|
+| **Languages** | Python, SQL |
+| **Data** | pandas, numpy, scipy |
+| **APIs** | REST, rate limiting, retry logic, caching |
+| **Databases** | PostgreSQL, star schema, dimensional modeling |
+| **Infrastructure** | GCP, Linux, systemd, nginx |
+| **Quality** | Data validation, quality gates, testing (pytest) |
+| **DevOps** | Git, CI patterns |
 
 ---
 
-## Engineering Practices Demonstrated
+## Engineering Practices
 
 - **Schema Validation** — Contract-driven column validation with 150+ field alias mappings
-- **Quality Gates** — Completeness, uniqueness, range validation on every pipeline run
+- **Quality Gates** — Completeness, uniqueness, range validation on every pipeline
 - **Rate Limiting** — Exponential backoff for API reliability under throttling
 - **Star Schema** — Fact and dimension tables with surrogate keys
 - **Idempotent Pipelines** — Safe to re-run without side effects
@@ -95,43 +141,56 @@ python pipeline.py
 ## Repository Structure
 
 ```
-Proof_Package/
-├── README.md
+Data-Engineering-Portfolio/
+├── README.md                     # You are here
 ├── pipelines/
-│   ├── federal_awards/       # USASpending API
-│   ├── sec_financial/        # SEC EDGAR XBRL
-│   ├── healthcare_quality/   # CMS Hospital Compare
-│   ├── energy_grid/          # EIA-930 grid data
-│   └── vulnerability_scoring/# NIST NVD + CISA KEV
+│   ├── federal_awards/           # USASpending API
+│   ├── sec_financial/            # SEC EDGAR XBRL
+│   ├── healthcare_quality/       # CMS Hospital Compare
+│   ├── energy_grid/              # EIA-930
+│   └── vulnerability_scoring/    # NIST NVD + CISA KEV
+├── demos/
+│   ├── financial-metrics/        # VaR, Sharpe, Sortino, Beta
+│   ├── etl-pipeline-template/    # Configurable ETL framework
+│   ├── multi-currency-fx/        # Currency conversion
+│   └── data-validation/          # Schema validation
 ├── reports/
-│   ├── founder_summaries/    # One-page project summaries
-│   └── executive_reports/    # Detailed analysis PDFs
-└── _archive/                 # Previous versions
+│   ├── founder_summaries/        # One-page project summaries
+│   └── executive_reports/        # Detailed analysis PDFs
+└── _archive/                     # Previous versions
 ```
 
 ---
 
-## Sample Output
+## Quick Start
 
-Each pipeline produces:
-- **Raw data** — Unmodified API responses (CSV)
-- **Cleaned data** — Normalized, validated datasets
-- **Star schema** — Fact and dimension tables
-- **KPIs** — Computed metrics (JSON)
-- **Pipeline metrics** — Runtime, API calls, quality scores
+```bash
+# Clone
+git clone https://github.com/mboyajeffers/Data-Engineering-Portfolio.git
+cd Data-Engineering-Portfolio
+
+# Install dependencies
+pip install pandas numpy scipy requests pytest
+
+# Run a pipeline
+cd pipelines/federal_awards && python pipeline.py
+
+# Run a demo
+cd demos/financial-metrics && python risk_metrics.py
+
+# Run tests
+cd demos/financial-metrics && pytest test_risk_metrics.py -v
+```
 
 ---
 
-## About
+## Contact
 
-Built by **Mboya Jeffers** — Data Engineer with full-stack pipeline ownership.
+**Mboya Jeffers** — Data Engineer
 
-These are simplified versions of patterns I use in production data systems.
-All data sources are public APIs; outputs are independently verifiable.
-
-**Contact:** MboyaJeffers9@gmail.com
-**LinkedIn:** [linkedin.com/in/mboya-jeffers-6377ba325](https://linkedin.com/in/mboya-jeffers-6377ba325)
-**Location:** Remote (US-based)
+- **Email:** MboyaJeffers9@gmail.com
+- **LinkedIn:** [linkedin.com/in/mboya-jeffers-6377ba325](https://linkedin.com/in/mboya-jeffers-6377ba325)
+- **Location:** Remote (US-based)
 
 ---
 
@@ -147,4 +206,4 @@ All data sources are public APIs; outputs are independently verifiable.
 
 ---
 
-*All portfolio data is verifiable via public APIs. No simulated or synthetic data.*
+*All portfolio data is from public APIs and independently verifiable.*
