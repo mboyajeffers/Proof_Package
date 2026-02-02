@@ -17,6 +17,7 @@ This folder contains visual architecture documentation for the top production pi
 |----------|----------|----------------|
 | [FEDERAL_AWARDS_ARCHITECTURE.md](FEDERAL_AWARDS_ARCHITECTURE.md) | P2-FED | 931-line pipeline, USAspending.gov API, star schema, 6 quality gates, HHI market concentration |
 | [SEC_FINANCIAL_ARCHITECTURE.md](SEC_FINANCIAL_ARCHITECTURE.md) | P2-SEC | 889-line pipeline, SEC EDGAR XBRL, 40+ companies, cohort benchmarking, financial ratios |
+| [HEALTHCARE_QUALITY_ARCHITECTURE.md](HEALTHCARE_QUALITY_ARCHITECTURE.md) | P3-MED | 693-line pipeline, Data.Medicare.gov, 4 data sources, hospital benchmarking, ownership analysis |
 
 ---
 
@@ -35,6 +36,13 @@ This folder contains visual architecture documentation for the top production pi
 - **Mapping:** Raw XBRL tags to canonical financial metrics
 - **Analysis:** Cross-company benchmarking with percentile rankings
 - **Domain:** Financial statement expertise (income, balance sheet, cash flow)
+
+### 3. Healthcare Quality (P3-MED)
+- **Complexity:** 4 integrated data sources from CMS
+- **Scale:** 942+ hospitals across 10 states
+- **Quality:** Suppression-aware validation (CMS privacy rules)
+- **Analysis:** State comparison, ownership analysis, quality leaders
+- **Domain:** Healthcare quality metrics (HCAHPS, readmissions, mortality)
 
 ---
 
