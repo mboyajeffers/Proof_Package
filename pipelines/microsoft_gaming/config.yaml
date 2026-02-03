@@ -1,0 +1,20 @@
+# Microsoft Gaming Analytics Configuration
+
+company:
+  ticker: MSFT
+  cik: "0000789019"
+  name: Microsoft Corporation
+  sector: Gaming
+
+analysis:
+  years: 10
+  risk_free_rate: 0.0  # Assumes 0% for Sharpe calculation
+
+output:
+  data_dir: data/
+  reports_dir: reports/
+
+# SEC EDGAR compliance
+sec:
+  user_agent: "MboyaJeffers MboyaJeffers9@gmail.com"
+  rate_limit_seconds: 0.1  # 10 requests per second max
