@@ -272,3 +272,6 @@ internal/
 **/flight_fact.csv
 **/flight_weather*.csv
 **/raw_flights.csv
+_archive/
+boot/
+output/
