@@ -22,9 +22,37 @@ from public APIs with quality gates, validation frameworks, and production disci
 
 | Section | What It Demonstrates |
 |---------|---------------------|
-| [**pipelines/**](#pipelines) | End-to-end ETL with public APIs (SEC, NIST, CMS, EIA, USASpending) |
+| [**projects/**](#projects) | Enterprise-scale ETL pipelines (7.5M+ rows) — SEC, Federal Awards, Medicare, Energy |
+| [**pipelines/**](#pipelines) | Production ETL with public APIs (SEC, NIST, CMS, EIA, USASpending) |
 | [**demos/**](#demos) | Standalone code samples: financial metrics, FX conversion, validation |
 | [**reports/**](#reports) | Sample outputs: executive summaries, methodology docs, industry analysis |
+
+---
+
+## Projects
+
+Enterprise-scale data pipelines designed for **7.5M+ total rows** across 4 domains. Each project demonstrates production patterns: star schema modeling, quality gates, and analytics.
+
+| Project | Data Source | Target Scale | Key Analytics |
+|---------|-------------|--------------|---------------|
+| **P01: SEC Financial** | SEC EDGAR XBRL | 1M+ facts | 50+ financial KPIs (ROE, ROA, margins) |
+| **P02: Federal Awards** | USASpending.gov | 1M+ awards | Agency spending, contractor rankings |
+| **P03: Medicare Prescriber** | CMS Part D | 5M+ prescriptions | Opioid patterns, drug utilization |
+| **P04: Energy Grid** | EIA-930 | 500K+ readings | Demand patterns, renewable share |
+
+```bash
+# Run any project
+cd projects/P01_SEC_Financial && python src/main.py --mode full
+cd projects/P02_Federal_Awards && python src/main.py --mode full
+cd projects/P03_Medicare_Prescriber && python src/main.py --mode full
+cd projects/P04_Energy_Grid && python src/main.py --mode full
+```
+
+Each project includes:
+- `src/extract.py` — API/bulk data extraction with rate limiting
+- `src/transform.py` — Star schema dimensional modeling
+- `src/analytics.py` — KPI calculations and business metrics
+- `sql/schema.sql` — PostgreSQL DDL for fact/dimension tables
 
 ---
 
@@ -143,6 +171,11 @@ print(f"Quality Score: {report.quality_score:.1%}")
 ```
 Data-Engineering-Portfolio/
 ├── README.md                     # You are here
+├── projects/                     # Enterprise-scale ETL (7.5M+ rows)
+│   ├── P01_SEC_Financial/        # 1M+ financial facts
+│   ├── P02_Federal_Awards/       # 1M+ federal awards
+│   ├── P03_Medicare_Prescriber/  # 5M+ prescriptions
+│   └── P04_Energy_Grid/          # 500K+ grid readings
 ├── pipelines/
 │   ├── federal_awards/           # USASpending API
 │   ├── sec_financial/            # SEC EDGAR XBRL
@@ -172,6 +205,9 @@ cd Data-Engineering-Portfolio
 
 # Install dependencies
 pip install pandas numpy scipy requests pytest
+
+# Run an enterprise project (7.5M+ rows)
+cd projects/P01_SEC_Financial && python src/main.py --mode test
 
 # Run a pipeline
 cd pipelines/federal_awards && python pipeline.py
