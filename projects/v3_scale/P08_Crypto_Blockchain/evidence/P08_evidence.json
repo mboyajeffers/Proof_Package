@@ -1,0 +1,109 @@
+{
+  "project": "P08_Crypto_Blockchain",
+  "version": "1.0.0",
+  "author": "Mboya Jeffers",
+  "status": "PIPELINE_READY",
+
+  "description": "Enterprise-scale cryptocurrency market analytics pipeline using CoinGecko API",
+
+  "data_sources": {
+    "primary": [
+      {
+        "name": "CoinGecko API",
+        "url": "https://api.coingecko.com/api/v3",
+        "type": "REST API",
+        "auth": "None required (free tier)",
+        "rate_limit": "10-30 requests/minute",
+        "data_available": "15,000+ coins, market data, OHLCV, exchanges"
+      }
+    ],
+    "endpoints": [
+      {"path": "/coins/markets", "data": "Market data with prices"},
+      {"path": "/coins/{id}/ohlc", "data": "OHLCV historical data"},
+      {"path": "/global", "data": "Global market metrics"},
+      {"path": "/exchanges", "data": "Exchange information"}
+    ]
+  },
+
+  "target_scale": {
+    "coins": "5,000+",
+    "ohlcv_records": "3,000,000+",
+    "exchanges": "500+",
+    "total_rows": "5,000,000+",
+    "note": "Actual extraction depends on API rate limits and historical depth"
+  },
+
+  "pipeline_components": {
+    "extract.py": {
+      "purpose": "CoinGecko API extraction",
+      "features": [
+        "Rate limiting (respects free tier)",
+        "Paginated market data extraction",
+        "Historical OHLCV retrieval",
+        "Global metrics collection",
+        "Exchange data extraction",
+        "Comprehensive error handling"
+      ]
+    },
+    "transform.py": {
+      "purpose": "Star schema transformation",
+      "tables": [
+        "dim_asset",
+        "dim_exchange",
+        "dim_chain",
+        "dim_date",
+        "fact_prices",
+        "fact_ohlcv",
+        "fact_global_metrics"
+      ]
+    },
+    "analytics.py": {
+      "purpose": "Crypto KPI calculation",
+      "kpis": [
+        "Market overview (total cap, dominance)",
+        "Price performance (gainers, losers, volatility)",
+        "Category analysis (by asset type)",
+        "Market cap tier analysis",
+        "Exchange analysis"
+      ]
+    },
+    "main.py": {
+      "purpose": "Pipeline orchestration",
+      "modes": ["test", "full"]
+    }
+  },
+
+  "schema_pattern": "Kimball Star Schema",
+  "storage_format": "Parquet (columnar, compressed)",
+
+  "engineering_patterns": [
+    "ETL pipeline with clear separation of concerns",
+    "Surrogate key generation for dimension tables",
+    "Asset category classification",
+    "Market cap tier bucketing",
+    "Quality gates and validation",
+    "Evidence generation for auditability"
+  ],
+
+  "crypto_analytics": {
+    "market_metrics": "Total cap, volume, dominance",
+    "price_analysis": "24h/7d/30d changes, ATH/ATL",
+    "volatility": "30d and 90d volatility calculation",
+    "category_breakdown": "Stablecoins, DeFi, L1s, tokens",
+    "exchange_ranking": "By volume and trust score"
+  },
+
+  "verification": {
+    "api_endpoints_tested": true,
+    "schema_validated": true,
+    "code_reviewed": true,
+    "documentation_complete": true
+  },
+
+  "execution_instructions": {
+    "install": "pip install -r requirements.txt",
+    "test_mode": "python src/main.py --mode test --limit 50",
+    "full_mode": "python src/main.py --mode full",
+    "note": "Full mode requires extended runtime due to API rate limits"
+  }
+}
