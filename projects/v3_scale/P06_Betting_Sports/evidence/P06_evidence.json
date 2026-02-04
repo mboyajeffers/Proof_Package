@@ -1,0 +1,107 @@
+{
+  "project": "P06_Betting_Sports",
+  "version": "1.0.0",
+  "author": "Mboya Jeffers",
+  "status": "PIPELINE_READY",
+
+  "description": "Enterprise-scale sports betting analytics pipeline using ESPN and public sports data",
+
+  "data_sources": {
+    "primary": [
+      {
+        "name": "ESPN API",
+        "url": "https://site.api.espn.com/apis/site/v2/sports",
+        "type": "REST API",
+        "auth": "None required (public endpoints)",
+        "rate_limit": "Reasonable use policy",
+        "data_available": "Scores, teams, schedules, box scores"
+      }
+    ],
+    "leagues_supported": ["NFL", "NBA", "MLB", "NHL", "NCAA Football", "NCAA Basketball"],
+    "historical_depth": "5+ years of game data available"
+  },
+
+  "target_scale": {
+    "games": "50,000+",
+    "odds_records": "3,000,000+",
+    "player_stats": "5,000,000+",
+    "total_rows": "8,000,000+",
+    "note": "Actual extraction volume depends on API rate limits and historical depth"
+  },
+
+  "pipeline_components": {
+    "extract.py": {
+      "purpose": "Data extraction from ESPN and sports APIs",
+      "features": [
+        "Rate limiting with exponential backoff",
+        "Checkpoint/resume capability",
+        "Multi-league support (NFL, NBA, MLB, NHL)",
+        "Comprehensive error handling",
+        "Extraction logging"
+      ]
+    },
+    "transform.py": {
+      "purpose": "Star schema transformation",
+      "tables": [
+        "dim_team",
+        "dim_player",
+        "dim_league",
+        "dim_venue",
+        "dim_season",
+        "dim_date",
+        "fact_games",
+        "fact_odds",
+        "fact_player_stats"
+      ]
+    },
+    "analytics.py": {
+      "purpose": "Betting KPI calculation",
+      "kpis": [
+        "Team win rates and ATS records",
+        "Home field advantage analysis",
+        "Over/under trends",
+        "Spread accuracy metrics",
+        "Scoring trends",
+        "Player performance leaders"
+      ]
+    },
+    "main.py": {
+      "purpose": "Pipeline orchestration",
+      "modes": ["test", "full"]
+    }
+  },
+
+  "schema_pattern": "Kimball Star Schema",
+  "storage_format": "Parquet (columnar, compressed)",
+
+  "engineering_patterns": [
+    "ETL pipeline with clear separation of concerns",
+    "Surrogate key generation for dimension tables",
+    "Slowly Changing Dimension (SCD) Type 2 support",
+    "Quality gates and validation",
+    "Evidence generation for auditability",
+    "Multi-sport support with unified schema"
+  ],
+
+  "betting_analytics": {
+    "spread_analysis": "ATS records, cover percentages",
+    "totals_analysis": "Over/under trends, average totals",
+    "home_advantage": "Win rates, margins by venue",
+    "player_props": "Individual performance vs lines",
+    "market_efficiency": "Line movement tracking"
+  },
+
+  "verification": {
+    "api_endpoints_tested": true,
+    "schema_validated": true,
+    "code_reviewed": true,
+    "documentation_complete": true
+  },
+
+  "execution_instructions": {
+    "install": "pip install -r requirements.txt",
+    "test_mode": "python src/main.py --mode test",
+    "full_mode": "python src/main.py --mode full",
+    "note": "Full mode extracts years of historical data, requires extended runtime"
+  }
+}
