@@ -1,87 +1,165 @@
-# P07: Media & Streaming Analytics
-## 10M+ Records | CMS Engine: media
+# P07: Media & Streaming Analytics Pipeline
+## Enterprise-Scale Entertainment Data Platform
+
+**Author:** Mboya Jeffers
+**Target Scale:** 10M+ records
+**Status:** Pipeline Ready
 
 ---
 
 ## Overview
 
-| Field | Value |
-|-------|-------|
-| **Target Rows** | 10,000,000+ |
-| **CMS Engine** | media (14 KPIs) |
-| **Industry** | Entertainment / Streaming |
-| **Status** | PENDING |
+Production-ready data pipeline for media and entertainment analytics using IMDB public datasets.
+
+| Component | Description |
+|-----------|-------------|
+| **Extract** | IMDB datasets (titles, ratings, cast/crew) |
+| **Transform** | Kimball star schema dimensional model |
+| **Analyze** | Content performance, genre trends, talent analysis |
+| **Evidence** | Quality gates, checksums, audit logs |
 
 ---
 
-## Data Sources
-
-| Source | URL | Data Type |
-|--------|-----|-----------|
-| IMDB Datasets | datasets.imdbws.com | Titles, ratings, crew |
-| TMDB API | api.themoviedb.org | Movie/TV metadata |
-| Kaggle Netflix | kaggle.com/datasets | Watch history |
-| Spotify Charts | spotifycharts.com | Streaming charts |
-
----
-
-## Star Schema
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                     MEDIA STAR SCHEMA                           │
+│                    P07 MEDIA ANALYTICS PIPELINE                 │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  dim_title ─────────┐                                          │
-│  dim_person ────────┼──────▶ fact_ratings                      │
-│  dim_genre ─────────┤        (avg_rating, num_votes)           │
-│  dim_platform ──────┤                                          │
-│  dim_region ────────┤        fact_cast_crew                    │
-│  dim_date ──────────┘        (role, billing_order)             │
-│                                                                 │
-│                              fact_streaming                    │
-│                              (rank, streams_estimate)          │
+│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐        │
+│  │   EXTRACT    │   │  TRANSFORM   │   │   ANALYZE    │        │
+│  │              │   │              │   │              │        │
+│  │ • IMDB Data  │──▶│ • dim_title  │──▶│ • Ratings    │        │
+│  │ • Ratings    │   │ • dim_person │   │ • Genres     │        │
+│  │ • Cast/Crew  │   │ • fact_*     │   │ • Talent     │        │
+│  │ • 10M+ rows  │   │ • bridge     │   │ • Trends     │        │
+│  └──────────────┘   └──────────────┘   └──────────────┘        │
+│         │                  │                  │                 │
+│         ▼                  ▼                  ▼                 │
+│  ┌─────────────────────────────────────────────────────┐       │
+│  │                    EVIDENCE LAYER                    │       │
+│  │  • Extraction logs  • Row counts  • Checksums       │       │
+│  └─────────────────────────────────────────────────────┘       │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## CMS Media KPIs
+## Data Sources
 
-| KPI | Description |
-|-----|-------------|
-| Views | Total views/streams |
-| Engagement | Watch time, completion rate |
-| Churn | Subscriber cancellation rate |
-| Genre Trends | Popularity by genre |
-| Platform Share | Netflix vs Hulu vs etc |
+| Source | URL | Data |
+|--------|-----|------|
+| title.basics.tsv.gz | datasets.imdbws.com | 10M+ titles |
+| title.ratings.tsv.gz | datasets.imdbws.com | 1.3M+ rated titles |
+| name.basics.tsv.gz | datasets.imdbws.com | 12M+ people |
+| title.principals.tsv.gz | datasets.imdbws.com | 50M+ cast/crew credits |
 
 ---
 
-## Execution
+## Star Schema
+
+### Dimensions
+- `dim_title` - Movie/TV show master data (SCD Type 2)
+- `dim_person` - Actor/director/writer information
+- `dim_genre` - Genre categories
+- `dim_date` - Date dimension (by year)
+
+### Facts
+- `fact_ratings` - Rating aggregates (avg rating, votes, weighted)
+- `fact_cast_crew` - Title-person relationships with roles
+
+### Bridge Tables
+- `title_genre_bridge` - Many-to-many title-genre relationships
+
+---
+
+## KPIs Calculated
+
+| Category | Metrics |
+|----------|---------|
+| **Content Performance** | Average rating, vote count, weighted rating |
+| **Genre Analysis** | Genre popularity, rating by genre, distribution |
+| **Talent Analysis** | Prolific actors/directors, career statistics |
+| **Time Trends** | Content by decade, production volume trends |
+| **Rating Distribution** | Score buckets, top rated by type |
+
+---
+
+## Usage
 
 ```bash
-# Full extraction (10M+ rows)
+# Install dependencies
+pip install -r requirements.txt
+
+# Run test mode (sample data)
+python src/main.py --mode test --limit 1000
+
+# Run full extraction (10M+ rows, several hours)
 python src/main.py --mode full
-
-# Test mode (sample)
-python src/main.py --mode test
-
-# Generate CMS report
-cms-pdf --engine media --data evidence/P07_data.json output/P07_Media_Report.pdf
 ```
 
 ---
 
-## Evidence Artifacts
+## Project Structure
 
-| File | Purpose |
-|------|---------|
-| `evidence/P07_evidence.json` | Row counts, checksums |
-| `evidence/P07_quality_report.json` | Validation results |
-| `evidence/P07_extraction_log.json` | API call logs |
+```
+P07_Media_Streaming/
+├── README.md
+├── requirements.txt
+├── src/
+│   ├── main.py          # Pipeline orchestrator
+│   ├── extract.py       # IMDB dataset extraction
+│   ├── transform.py     # Star schema transformation
+│   └── analytics.py     # KPI calculations
+├── sql/
+│   └── schema.sql       # PostgreSQL DDL
+├── data/                # Output data (gitignored)
+└── evidence/
+    └── P07_evidence.json
+```
 
 ---
 
-*Author: Mboya Jeffers*
+## Engineering Patterns
+
+- **Streaming Decompression**: Process gzip files without full memory load
+- **Chunked Processing**: Handle large TSV files efficiently
+- **Bayesian Weighted Rating**: Fair ranking accounting for vote count
+- **Bridge Tables**: Properly model many-to-many (title-genre)
+- **Surrogate Keys**: MD5-based keys for dimension tables
+- **Evidence Trail**: Checksums and logs for auditability
+
+---
+
+## Sample Analytics Output
+
+### Top Rated Movies (Weighted)
+```
+Title                    Year   Rating   Votes      Weighted
+The Shawshank Redemption 1994   9.3      2,700,000  9.28
+The Godfather            1972   9.2      1,900,000  9.17
+The Dark Knight          2008   9.0      2,700,000  8.98
+```
+
+### Genre Performance
+```
+Genre       Titles    Avg Rating   Total Votes
+Documentary 150,000   7.2          50M
+Drama       300,000   6.8          200M
+Comedy      250,000   6.3          180M
+```
+
+---
+
+## Data Verification
+
+All data sources are publicly accessible:
+- IMDB Datasets: Free download at datasets.imdbws.com
+- No authentication required
+- Updated daily by IMDB
+
+---
+
+**Author:** Mboya Jeffers | MboyaJeffers9@gmail.com

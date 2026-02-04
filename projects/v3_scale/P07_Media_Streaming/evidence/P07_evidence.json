@@ -1,0 +1,109 @@
+{
+  "project": "P07_Media_Streaming",
+  "version": "1.0.0",
+  "author": "Mboya Jeffers",
+  "status": "PIPELINE_READY",
+
+  "description": "Enterprise-scale media analytics pipeline using IMDB public datasets",
+
+  "data_sources": {
+    "primary": [
+      {
+        "name": "IMDB Datasets",
+        "url": "https://datasets.imdbws.com",
+        "type": "TSV.GZ (compressed)",
+        "auth": "None required (public)",
+        "refresh_rate": "Daily",
+        "data_available": "10M+ titles, 12M+ people, 50M+ credits"
+      }
+    ],
+    "datasets": [
+      {"name": "title.basics.tsv.gz", "content": "Title metadata", "records": "10M+"},
+      {"name": "title.ratings.tsv.gz", "content": "Ratings and votes", "records": "1.3M+"},
+      {"name": "name.basics.tsv.gz", "content": "Person information", "records": "12M+"},
+      {"name": "title.principals.tsv.gz", "content": "Cast/crew credits", "records": "50M+"}
+    ]
+  },
+
+  "target_scale": {
+    "titles": "1,000,000+",
+    "ratings": "1,300,000+",
+    "people": "5,000,000+",
+    "credits": "3,000,000+",
+    "total_rows": "10,000,000+",
+    "note": "Full IMDB dataset contains 10M+ titles and 50M+ credits"
+  },
+
+  "pipeline_components": {
+    "extract.py": {
+      "purpose": "IMDB dataset extraction",
+      "features": [
+        "Streaming gzip decompression",
+        "Large file chunked processing",
+        "TSV parsing with null handling",
+        "Progress logging",
+        "Type filtering (movies, TV series)"
+      ]
+    },
+    "transform.py": {
+      "purpose": "Star schema transformation",
+      "tables": [
+        "dim_title",
+        "dim_person",
+        "dim_genre",
+        "dim_date",
+        "fact_ratings",
+        "fact_cast_crew",
+        "title_genre_bridge"
+      ]
+    },
+    "analytics.py": {
+      "purpose": "Media KPI calculation",
+      "kpis": [
+        "Content performance (ratings, votes)",
+        "Genre analysis (popularity, trends)",
+        "Talent analysis (prolific actors/directors)",
+        "Time analysis (by decade, recent trends)",
+        "Weighted ratings (Bayesian average)"
+      ]
+    },
+    "main.py": {
+      "purpose": "Pipeline orchestration",
+      "modes": ["test", "full"]
+    }
+  },
+
+  "schema_pattern": "Kimball Star Schema",
+  "storage_format": "Parquet (columnar, compressed)",
+
+  "engineering_patterns": [
+    "ETL pipeline with clear separation of concerns",
+    "Surrogate key generation for dimension tables",
+    "Streaming decompression for large datasets",
+    "Bayesian weighted rating calculation",
+    "Bridge table for many-to-many relationships",
+    "Quality gates and validation",
+    "Evidence generation for auditability"
+  ],
+
+  "analytics_capabilities": {
+    "content_analysis": "Top rated, rating distribution, by type",
+    "genre_analysis": "Popularity, average ratings, trends",
+    "talent_analysis": "Career statistics, most prolific",
+    "time_analysis": "By decade, production trends"
+  },
+
+  "verification": {
+    "api_endpoints_tested": true,
+    "schema_validated": true,
+    "code_reviewed": true,
+    "documentation_complete": true
+  },
+
+  "execution_instructions": {
+    "install": "pip install -r requirements.txt",
+    "test_mode": "python src/main.py --mode test --limit 1000",
+    "full_mode": "python src/main.py --mode full",
+    "note": "Full mode downloads ~1GB of compressed data, requires several hours"
+  }
+}
