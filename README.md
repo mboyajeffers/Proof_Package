@@ -1,5 +1,11 @@
 # Mboya Jeffers - Enterprise Data Engineering Portfolio
-## 38.5M Rows | 8 Industries | Production-Ready Pipelines
+
+![CI](https://github.com/mboyajeffers/Data-Engineering-Portfolio/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+**38.5M Rows | 8 Industries | Production-Ready Pipelines**
 
 ---
 
@@ -10,7 +16,8 @@ Experience_Folder/
 ├── projects/
 │   ├── v2_foundation/     ← 7.5M rows (P01-P04)
 │   └── v3_scale/          ← 31M rows (P05-P08)
-├── boot/                  ← Checkpoints & Plans
+├── docs/
+│   └── architecture/      ← Pipeline design documentation
 └── README.md              ← You are here
 ```
 
