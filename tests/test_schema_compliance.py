@@ -5,7 +5,6 @@ Validates dimensional modeling standards (Kimball methodology).
 Author: Mboya Jeffers
 """
 
-import pytest
 import pandas as pd
 
 

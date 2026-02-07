@@ -5,7 +5,6 @@ Validates deterministic key generation for dimensional modeling.
 Author: Mboya Jeffers
 """
 
-import pytest
 from datetime import datetime, date
 import sys
 from pathlib import Path

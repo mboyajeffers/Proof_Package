@@ -1,5 +1,5 @@
 # v3 Scale Projects
-## 31M Rows | 4 CMS Engine Verticals | Enterprise Scale
+## 31M Rows | 4 Industry Verticals | Enterprise Scale
 
 ---
 
@@ -9,53 +9,50 @@
 |--------|-------|
 | **Total Rows** | 31M+ |
 | **Projects** | 4 |
-| **CMS Engines** | gaming, betting, media, crypto |
-| **Status** | IN PROGRESS |
+| **Industries** | Gaming, Betting, Media, Crypto |
+| **Status** | COMPLETE |
 
 ---
 
 ## Projects
 
 ### P05: Gaming Analytics (8M rows)
-- **CMS Engine:** gaming (16 KPIs)
+- **KPIs:** 16 (DAU/MAU, ARPU, retention, session time)
 - **Sources:** Steam API, IGDB, SteamSpy, Kaggle
 - **Data:** Games, reviews, player stats
-- **Analytics:** DAU/MAU, ARPU, retention, session time
-- **Status:** PENDING
+- **Analytics:** Player engagement, revenue estimates, genre performance
+- **Status:** COMPLETE
 
 ### P06: Betting & Sports Analytics (8M rows)
-- **CMS Engine:** betting (16 KPIs)
+- **KPIs:** 16 (ATS, O/U trends, home advantage)
 - **Sources:** Sports Reference, ESPN, historical odds
 - **Data:** Games, scores, odds, player stats
 - **Analytics:** Spread accuracy, win rates, handle
-- **Status:** PENDING
+- **Status:** COMPLETE
 
 ### P07: Media & Streaming Analytics (10M rows)
-- **CMS Engine:** media (14 KPIs)
+- **KPIs:** 14 (engagement, watch time, genre trends)
 - **Sources:** IMDB datasets, TMDB, streaming charts
 - **Data:** Titles, ratings, cast/crew
-- **Analytics:** Engagement, watch time, genre trends
-- **Status:** PENDING
+- **Analytics:** Bayesian weighted ratings, talent analysis
+- **Status:** COMPLETE
 
 ### P08: Crypto & Blockchain Analytics (5M rows)
-- **CMS Engine:** crypto (30 KPIs - largest!)
+- **KPIs:** 30 (volatility, TVL, market cap, dominance)
 - **Sources:** CoinGecko, CryptoCompare, Messari
 - **Data:** Prices, volume, on-chain metrics
-- **Analytics:** Volatility, TVL, market cap
-- **Status:** PENDING
+- **Analytics:** Tier analysis, correlation, market structure
+- **Status:** COMPLETE
 
 ---
 
-## CMS Engine Integration
+## Report Generation
 
-Each project uses a CMS engine for report generation:
+Each project includes a report generation module:
 
 ```bash
-# Generate reports using CMS engines
-cms-pdf --engine gaming --data P05_data.json P05_Gaming_Report.pdf
-cms-pdf --engine betting --data P06_data.json P06_Betting_Report.pdf
-cms-pdf --engine media --data P07_data.json P07_Media_Report.pdf
-cms-pdf --engine crypto --data P08_data.json P08_Crypto_Report.pdf
+# Generate reports for any vertical
+python src/main.py --mode full --output reports/
 ```
 
 ---
@@ -78,4 +75,4 @@ v3_scale/
 
 ---
 
-*v3 Scale - Demonstrates CMS engine integration at 30M+ scale*
+*v3 Scale - Demonstrates enterprise ETL at 30M+ scale across 4 industries*

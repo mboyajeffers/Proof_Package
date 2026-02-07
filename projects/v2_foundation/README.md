@@ -1,5 +1,5 @@
 # v2 Foundation Projects
-## 7.5M Rows | 4 Industries | 3 CMS Engines
+## 7.5M Rows | 4 Industries | Enterprise Patterns
 
 ---
 
@@ -9,7 +9,7 @@
 |--------|-------|
 | **Total Rows** | 7.5M |
 | **Projects** | 4 |
-| **CMS Engines** | finance, compliance, solar |
+| **Industries** | Finance, Government, Healthcare, Energy |
 | **Status** | COMPLETE |
 
 ---
@@ -19,25 +19,21 @@
 ### P01: SEC Financial Intelligence
 - **Rows:** 1M+ financial facts
 - **Source:** SEC EDGAR XBRL
-- **CMS Engine:** finance
 - **Analytics:** 50+ KPIs (ROE, ROA, margins)
 
 ### P02: Federal Contract Awards
 - **Rows:** 1M+ awards
 - **Source:** USASpending.gov
-- **CMS Engine:** compliance
 - **Analytics:** Agency spending, contractor rankings
 
 ### P03: Medicare Prescriber Analysis
 - **Rows:** 5M+ prescriptions
-- **Source:** CMS Part D Files
-- **CMS Engine:** (healthcare - no engine)
+- **Source:** Medicare Part D Files
 - **Analytics:** Opioid patterns, drug utilization
 
 ### P04: Energy Grid Analytics
 - **Rows:** 500K+ readings
 - **Source:** EIA-930 API
-- **CMS Engine:** solar
 - **Analytics:** Demand patterns, generation mix
 
 ---

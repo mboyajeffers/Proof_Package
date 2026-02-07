@@ -5,9 +5,7 @@ Validates completeness, uniqueness, and range checks.
 Author: Mboya Jeffers
 """
 
-import pytest
 import pandas as pd
-import numpy as np
 
 
 class DataValidator:
@@ -27,7 +25,7 @@ class DataValidator:
                 results[col] = {
                     'null_count': int(null_count),
                     'completeness_pct': round((total - null_count) / total * 100, 2) if total > 0 else 0,
-                    'passed': null_count == 0
+                    'passed': bool(null_count == 0)
                 }
         return results
 
@@ -41,7 +39,7 @@ class DataValidator:
         return {
             'duplicate_count': int(duplicates),
             'unique_count': len(df) - duplicates,
-            'passed': duplicates == 0
+            'passed': bool(duplicates == 0)
         }
 
     @staticmethod
@@ -57,7 +55,7 @@ class DataValidator:
             'out_of_range_count': int(out_of_range),
             'min_found': float(values.min()) if len(values) > 0 else None,
             'max_found': float(values.max()) if len(values) > 0 else None,
-            'passed': out_of_range == 0
+            'passed': bool(out_of_range == 0)
         }
 
 
