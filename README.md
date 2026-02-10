@@ -5,7 +5,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**38.5M+ rows | 8 industries | Production-ready pipelines | Weekly Intelligence Reports**
+**4.3M+ verified rows | 8 industries | Production-ready pipelines | 23 Intelligence Reports**
 
 ---
 
@@ -14,7 +14,7 @@
 ```
 Experience_Folder/
 │
-├── projects/                  ← THE WORK. 8 data engineering projects (38.5M rows)
+├── projects/                  ← THE WORK. 8 data engineering projects (4.3M+ rows)
 │   ├── v2_foundation/         P01-P04: Finance, Gov, Health, Energy (7.5M rows)
 │   └── v3_scale/              P05-P08: Gaming, Betting, Media, Crypto (31M rows)
 │
@@ -103,17 +103,24 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 
 | Report | Data Source | Records | What It Shows |
 |--------|-----------|---------|--------------|
-| Finance Weekly Intelligence | FRED API | 122K | GDP, CPI, unemployment, Fed funds, yield curve |
-| Trading Performance | Yahoo Finance | 254K | 101 securities, 10yr OHLCV, top movers |
-| Crypto Market Intelligence | CoinGecko | 250 | 250 coins, market cap, volatility |
-| Gaming Industry Metrics | Steam/SteamSpy | 1K | Player engagement, pricing, genre distribution |
-| Weekend Sports Recap | ESPN | 124 | 4 leagues, 124 teams, standings |
-| Climate & Weather Summary | Open-Meteo | 37K | 10 cities, 10yr daily temperature/precipitation |
-| Solar Generation Report | NREL PVWatts | 120 | 10 US locations, monthly AC output |
-| Regulatory Filing Monitor | SEC EDGAR | 531K | 20 companies, XBRL financial facts |
-| **Executive Summary** | **All 8 sources** | **946K** | **Cross-industry overview** |
+| Finance Weekly Intelligence | FRED API | 368K | 50 macro series — GDP, CPI, yield curve, labor, money supply |
+| Trading Performance | Yahoo Finance | 529K | 200 securities, 5yr OHLCV, sector rotation |
+| Crypto Market Intelligence | CoinGecko | 21K | Top coins, market cap, volatility |
+| Gaming Industry Metrics | Steam/SteamSpy | 37K | Player engagement, pricing, genre distribution |
+| Weekend Sports Recap | ESPN | 21K | 4 leagues, standings, conference rankings |
+| Climate & Weather Summary | Open-Meteo | 2.7M | 30 cities, hourly + daily, 10-year history |
+| Solar Generation Report | NREL PVWatts | 500 | 10 US locations, monthly AC output |
+| Regulatory Filing Monitor | SEC EDGAR | 570K | XBRL financial facts, filing patterns |
+| **Executive Summary** | **All 8 sources** | **4.3M** | **Cross-industry overview** |
 
-Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
+23 total reports: 9 weekly + 9 monthly + 5 quarterly. Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
+
+### Related Repositories
+
+| Repo | Focus | Content |
+|------|-------|---------|
+| [financial-data-engineering](https://github.com/mboyajeffers/financial-data-engineering) | Engineering | ETL pipeline code, data quality framework, star schema modeling, 68 tests |
+| [financial-market-analysis](https://github.com/mboyajeffers/financial-market-analysis) | Analysis | 23 branded intelligence reports (PDFs), KPI methodology, data source docs |
 
 ---
 
