@@ -5,7 +5,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**38.5M rows | 8 industries | Production-ready pipelines**
+**38.5M+ rows | 8 industries | Production-ready pipelines | Weekly Intelligence Reports**
 
 ---
 
@@ -38,6 +38,7 @@ Experience_Folder/
 │                              Gaming, Betting, Media, Crypto, Microsoft Gaming)
 │
 ├── reports/                   ← SAMPLE PDFS. Generated reports demonstrating output quality
+│   ├── weekly_intelligence/   Monday morning reports (Finance, Crypto, Executive Summary)
 │   ├── executive_reports/     Executive summaries (SEC, Federal Awards, Aviation)
 │   ├── founder_summaries/     One-page briefs per project (6 PDFs)
 │   ├── industry_analysis/     Industry deep-dives (Finance, Compliance, Solar)
@@ -96,6 +97,26 @@ P0X_{name}/
 
 ---
 
+## Weekly Intelligence Reports
+
+Live pipeline execution producing Monday morning reports from 8 independent data sources. Each report is generated end-to-end: API extraction, Kimball star schema transformation, KPI computation, PDF rendering.
+
+| Report | Data Source | Records | What It Shows |
+|--------|-----------|---------|--------------|
+| Finance Weekly Intelligence | FRED API | 122K | GDP, CPI, unemployment, Fed funds, yield curve |
+| Trading Performance | Yahoo Finance | 254K | 101 securities, 10yr OHLCV, top movers |
+| Crypto Market Intelligence | CoinGecko | 250 | 250 coins, market cap, volatility |
+| Gaming Industry Metrics | Steam/SteamSpy | 1K | Player engagement, pricing, genre distribution |
+| Weekend Sports Recap | ESPN | 124 | 4 leagues, 124 teams, standings |
+| Climate & Weather Summary | Open-Meteo | 37K | 10 cities, 10yr daily temperature/precipitation |
+| Solar Generation Report | NREL PVWatts | 120 | 10 US locations, monthly AC output |
+| Regulatory Filing Monitor | SEC EDGAR | 531K | 20 companies, XBRL financial facts |
+| **Executive Summary** | **All 8 sources** | **946K** | **Cross-industry overview** |
+
+Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
+
+---
+
 ## Skills Demonstrated
 
 | Category | Technologies |
@@ -108,6 +129,7 @@ P0X_{name}/
 | Infrastructure | Terraform (GCP), systemd, GitHub Actions CI/CD |
 | Observability | SLI/SLO tracking, error budgets, structured alerting |
 | Security | RBAC, immutable audit trails, GCP Secret Manager |
+| Reporting | Automated PDF generation, KPI dashboards, WeasyPrint |
 | Industries | Finance, Government, Healthcare, Energy, Gaming, Betting, Media, Crypto |
 
 ---
