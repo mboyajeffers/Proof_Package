@@ -3,7 +3,7 @@ P06 Betting & Sports Analytics - Analytics Module
 Author: Mboya Jeffers
 
 Calculates key performance indicators for sports betting analytics.
-Calculates 16 industry-standard KPIs for automated report generation.
+Betting analytics KPIs for report generation.
 """
 
 import json
@@ -31,7 +31,7 @@ class BettingAnalyticsEngine:
     - Player Analytics: Leaders, efficiency metrics
     - Market Analysis: Line movement, value identification
 
-    Computes 16 KPIs across standings, trends, and market analysis.
+    Betting analytics (16 KPIs).
     """
 
     def __init__(self, data_dir: str = "data"):
@@ -346,7 +346,7 @@ class BettingAnalyticsEngine:
         """
         Generate summary of all calculated KPIs.
 
-        Summarizes all computed betting KPIs.
+        Maps to betting engine KPIs.
 
         Returns:
             Dictionary of KPI summaries

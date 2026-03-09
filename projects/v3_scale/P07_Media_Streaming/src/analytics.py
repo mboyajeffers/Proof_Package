@@ -3,7 +3,7 @@ P07 Media & Streaming Analytics - Analytics Module
 Author: Mboya Jeffers
 
 Calculates key performance indicators for media and entertainment analytics.
-Calculates 14 industry-standard KPIs for automated report generation.
+Media analytics KPIs for report generation.
 """
 
 import json
@@ -31,7 +31,7 @@ class MediaAnalyticsEngine:
     - Talent Analysis: Actor/director performance
     - Time Analysis: Historical trends by decade/year
 
-    Computes 14 KPIs across content performance, genres, and talent.
+    Media analytics (14 KPIs).
     """
 
     def __init__(self, data_dir: str = "data"):
@@ -350,7 +350,7 @@ class MediaAnalyticsEngine:
         """
         Generate summary of all calculated KPIs.
 
-        Summarizes all computed media KPIs.
+        Maps to media engine KPIs.
 
         Returns:
             Dictionary of KPI summaries

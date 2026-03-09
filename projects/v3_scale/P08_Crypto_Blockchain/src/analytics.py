@@ -3,7 +3,7 @@ P08 Crypto & Blockchain Analytics - Analytics Module
 Author: Mboya Jeffers
 
 Calculates key performance indicators for cryptocurrency market analytics.
-Calculates 30 industry-standard KPIs for automated report generation.
+Crypto portfolio KPIs for report generation.
 """
 
 import json
@@ -31,7 +31,7 @@ class CryptoAnalyticsEngine:
     - Asset Analysis: By category, by market cap tier
     - Exchange Analysis: Volume distribution, trust scores
 
-    Computes 30 KPIs across market overview, performance, and exchange analysis.
+    Crypto portfolio analytics (30 KPIs).
     """
 
     def __init__(self, data_dir: str = "data"):
@@ -331,7 +331,7 @@ class CryptoAnalyticsEngine:
         """
         Generate summary of all calculated KPIs.
 
-        Summarizes all computed crypto KPIs.
+        Maps to crypto engine KPIs.
 
         Returns:
             Dictionary of KPI summaries

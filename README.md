@@ -5,7 +5,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**4.3M+ verified rows | 8 industries | Production-ready pipelines | 23 Intelligence Reports**
+**4.3M+ verified rows | 8 industries | 750+ tests | ML pipelines | Weekly Intelligence Reports**
 
 ---
 
@@ -50,32 +50,32 @@ Experience_Folder/
 │   ├── financial-metrics/     12-KPI risk calculation module (with tests)
 │   └── multi-currency-fx/     Multi-currency conversion utility
 │
-├── tests/                     ← TEST SUITE. Data quality + schema + surrogate key tests
-│
-└── boot/                      ← PLANNING DOCS. Checkpoint, scale-up plan, bug log
+└── tests/                     ← TEST SUITE. Data quality + schema + surrogate key tests
 ```
 
 ---
 
 ## The 8 Projects
 
-### v2 Foundation — 7.5M rows
+### v2 Foundation
 
-| # | Project | Industry | Rows | Data Source | What It Proves |
-|---|---------|----------|------|-------------|----------------|
+| # | Project | Industry | Capacity | Data Source | What It Proves |
+|---|---------|----------|----------|-------------|----------------|
 | P01 | SEC Financial Intelligence | Finance | 1M | SEC EDGAR XBRL | XBRL parsing, 50+ financial KPIs |
 | P02 | Federal Contract Awards | Government | 1M | USASpending.gov API | REST pagination, agency analytics |
 | P03 | Medicare Prescriber Analysis | Healthcare | 5M | Medicare Part D | Bulk file processing, opioid patterns |
 | P04 | Energy Grid Analytics | Energy | 500K | EIA-930 API | Time-series, generation mix tracking |
 
-### v3 Scale — 31M rows
+### v3 Scale
 
-| # | Project | Industry | Rows | Data Source | What It Proves |
-|---|---------|----------|------|-------------|----------------|
+| # | Project | Industry | Capacity | Data Source | What It Proves |
+|---|---------|----------|----------|-------------|----------------|
 | P05 | Gaming Analytics | Gaming | 8M | Steam API, SteamSpy | Multi-source aggregation, retention |
 | P06 | Betting & Sports | Betting | 8M | ESPN API | Odds modeling, spread accuracy |
 | P07 | Media & Streaming | Media | 10M | IMDB Datasets | Bayesian ratings, content trends |
 | P08 | Crypto & Blockchain | Crypto | 5M | CoinGecko API | Volatility, DeFi TVL, on-chain |
+
+*Capacity = design-scale target per pipeline. Verified ETL output across all projects: **4.3M+ rows**.*
 
 ---
 
@@ -120,7 +120,7 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 | Repo | Focus | Content |
 |------|-------|---------|
 | [financial-data-engineering](https://github.com/mboyajeffers/financial-data-engineering) | Engineering | ETL pipeline code, data quality framework, star schema modeling, 68 tests |
-| [financial-market-analysis](https://github.com/mboyajeffers/financial-market-analysis) | Analysis | 23 branded intelligence reports (PDFs), KPI methodology, data source docs |
+| [financial-market-analysis](https://github.com/mboyajeffers/financial-market-analysis) | Analysis | 33 intelligence reports (PDFs), report generators, enterprise showcase |
 
 ---
 
@@ -136,6 +136,7 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 | Infrastructure | Terraform (GCP), systemd, GitHub Actions CI/CD |
 | Observability | SLI/SLO tracking, error budgets, structured alerting |
 | Security | RBAC, immutable audit trails, GCP Secret Manager |
+| Machine Learning | scikit-learn, statsmodels, GARCH, feature stores, model training & backtesting |
 | Reporting | Automated PDF generation, KPI dashboards, WeasyPrint |
 | Industries | Finance, Government, Healthcare, Energy, Gaming, Betting, Media, Crypto |
 
@@ -143,7 +144,7 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 
 ## Contact
 
-**Mboya Jeffers** — Data Engineer
+**Mboya Jeffers** — Data & ML Engineer
 
 - **Email:** MboyaJeffers9@gmail.com
 - **LinkedIn:** linkedin.com/in/mboya-jeffers
