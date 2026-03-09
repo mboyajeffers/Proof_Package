@@ -11,7 +11,7 @@
 
 ## Context
 
-The platform originally used SQLite as its primary data store. As the system grew to 11 industry engines, 188+ KPIs, and 6 concurrent systemd services, SQLite's single-writer limitation became a bottleneck. The orchestrator, intake watcher, and web API all needed concurrent write access. Additionally, the platform required an immutable audit trail with database-level triggers and RBAC enforced at the database layer -- capabilities SQLite does not natively support.
+The platform originally used SQLite as its primary data store. As the system grew to multiple industry engines, industry-specific KPIs, and concurrent systemd services, SQLite's single-writer limitation became a bottleneck. The orchestrator, intake watcher, and web API all needed concurrent write access. Additionally, the platform required an immutable audit trail with database-level triggers and RBAC enforced at the database layer -- capabilities SQLite does not natively support.
 
 ## Decision
 
@@ -93,7 +93,7 @@ Maintain a monolith architecture with clear internal module boundaries. While th
 /opt/app/
 +-- engines/
 |   +-- core/          # Shared utilities (25+ modules)
-|   +-- industry/      # 11 engine modules
+|   +-- industry/      # Industry engine modules
 +-- src/
 |   +-- api/           # 31+ API blueprints
 |   +-- templates/     # 15 Jinja2 pages
@@ -106,8 +106,8 @@ Maintain a monolith architecture with clear internal module boundaries. While th
 
 **Positive:**
 - Single deployment: `git pull && systemctl restart app-web`
-- Shared utilities across all 11 engines without versioning headaches
-- 523 tests run against the entire system in one pytest invocation
+- Shared utilities across all engines without versioning headaches
+- 750+ tests run against the entire system in one pytest invocation
 - Simple dependency management: one requirements.txt, one virtual environment
 
 **Negative:**

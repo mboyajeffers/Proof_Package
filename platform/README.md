@@ -7,7 +7,7 @@
 
 ## What This Is
 
-This directory contains the operational infrastructure I built and run for a **production analytics platform** serving 11 industry verticals with 188+ KPIs. Every file here runs in production on GCP.
+This directory contains the operational infrastructure I built and run for a **production analytics platform** serving multiple industry verticals with industry-specific KPIs. Every file here runs in production on GCP.
 
 This isn't a tutorial or a toy project. This is how I operate real systems.
 
@@ -17,10 +17,10 @@ This isn't a tutorial or a toy project. This is how I operate real systems.
 
 | Metric | Value |
 |--------|-------|
-| **Industry Engines** | 11 (Finance, Brokerage, Compliance, Crypto, Ecommerce, Gaming, Media, Oil & Gas, Solar, Weather, Betting) |
-| **KPIs Computed** | 188+ across all verticals |
-| **ETL Pipelines** | 11 registered, fully orchestrated with lineage tracking |
-| **Automated Tests** | 523 (security, integration, data quality, contracts, RBAC) |
+| **Industry Engines** | Multiple verticals (Finance, Crypto, Energy, Gaming, Sports, Weather, Compliance, and more) |
+| **KPIs Computed** | Industry-specific KPIs across all verticals |
+| **ETL Pipelines** | Fully orchestrated with lineage tracking |
+| **Automated Tests** | 750+ (security, integration, data quality, contracts, RBAC) |
 | **API Endpoints** | 60+ across 7 blueprint groups |
 | **Uptime SLO** | 99.5% availability, p95 < 500ms |
 | **Infrastructure** | GCP e2-medium, Ubuntu 24.04, 6 systemd services |
@@ -136,10 +136,10 @@ If you're evaluating my engineering capabilities, this directory demonstrates:
 
 | Capability | Evidence |
 |------------|----------|
-| **Platform Engineering** | Full-stack production system with 11 engines and 188 KPIs |
+| **Platform Engineering** | Full-stack production system with multiple industry engines and KPIs |
 | **DevOps/SRE** | CI/CD, IaC (Terraform), monitoring, alerting, SLOs, error budgets |
 | **Security** | RBAC, immutable audit trail, secrets management, security testing |
-| **Data Engineering** | 11 ETL pipelines with lineage, idempotency, contracts, DLQ |
+| **Data Engineering** | ETL pipelines with lineage, idempotency, contracts, DLQ |
 | **Operational Excellence** | Runbooks, ADRs, deploy/rollback scripts, automated backup |
 | **Testing Discipline** | 523 tests across 8 categories including security and data quality |
 | **Code Quality** | ruff linting, pre-commit hooks, SBOM, dependency auditing |
