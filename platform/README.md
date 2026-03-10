@@ -20,7 +20,7 @@ This isn't a tutorial or a toy project. This is how I operate real systems.
 | **Industry Engines** | Multiple verticals (Finance, Crypto, Energy, Gaming, Sports, Weather, Compliance, and more) |
 | **KPIs Computed** | Industry-specific KPIs across all verticals |
 | **ETL Pipelines** | Fully orchestrated with lineage tracking |
-| **Automated Tests** | 750+ (security, integration, data quality, contracts, RBAC) |
+| **Automated Tests** | Production test suite (security, integration, data quality, contracts, RBAC) |
 | **API Endpoints** | 60+ across 7 blueprint groups |
 | **Uptime SLO** | 99.5% availability, p95 < 500ms |
 | **Infrastructure** | GCP e2-medium, Ubuntu 24.04, 6 systemd services |
@@ -147,4 +147,4 @@ If you're evaluating my engineering capabilities, this directory demonstrates:
 ---
 
 *Built and operated by Mboya Jeffers*
-*Contact: MboyaJeffers9@gmail.com | linkedin.com/in/mboya-jeffers*
+*Contact: MboyaJeffers9@gmail.com | linkedin.com/in/mboya-jeffers-6377ba325*

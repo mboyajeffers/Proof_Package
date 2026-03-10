@@ -5,7 +5,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-**4.3M+ verified rows | 8 industries | 750+ tests | ML pipelines | Weekly Intelligence Reports**
+**4.3M+ verified rows | 8 industries | 100+ public tests | ML pipelines | Weekly Intelligence Reports**
 
 ---
 
@@ -113,7 +113,7 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 | Regulatory Filing Monitor | SEC EDGAR | 570K | XBRL financial facts, filing patterns |
 | **Executive Summary** | **All 8 sources** | **4.3M** | **Cross-industry overview** |
 
-23 total reports: 9 weekly + 9 monthly + 5 quarterly. Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
+33 total reports: 9 weekly + 9 monthly + 5 quarterly + 10 enterprise showcase. Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
 
 ### Related Repositories
 
@@ -147,7 +147,7 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 **Mboya Jeffers** — Data & ML Engineer
 
 - **Email:** MboyaJeffers9@gmail.com
-- **LinkedIn:** linkedin.com/in/mboya-jeffers
+- **LinkedIn:** linkedin.com/in/mboya-jeffers-6377ba325
 - **GitHub:** github.com/mboyajeffers
 - **Location:** Remote (US-based)
 

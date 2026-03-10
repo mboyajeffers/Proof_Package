@@ -107,7 +107,7 @@ Maintain a monolith architecture with clear internal module boundaries. While th
 **Positive:**
 - Single deployment: `git pull && systemctl restart app-web`
 - Shared utilities across all engines without versioning headaches
-- 750+ tests run against the entire system in one pytest invocation
+- Full test suite runs against the entire system in one pytest invocation
 - Simple dependency management: one requirements.txt, one virtual environment
 
 **Negative:**
