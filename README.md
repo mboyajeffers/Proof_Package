@@ -113,14 +113,14 @@ Live pipeline execution producing Monday morning reports from 8 independent data
 | Regulatory Filing Monitor | SEC EDGAR | 570K | XBRL financial facts, filing patterns |
 | **Executive Summary** | **All 8 sources** | **4.3M** | **Cross-industry overview** |
 
-33 total reports: 9 weekly + 9 monthly + 5 quarterly + 10 enterprise showcase. Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
+89 total reports: 23 recurring + 39 industry analysis + 12 methodology/summaries + 11 enterprise showcase + 4 samples. Sample reports: [`reports/weekly_intelligence/`](reports/weekly_intelligence/)
 
 ### Related Repositories
 
 | Repo | Focus | Content |
 |------|-------|---------|
 | [financial-data-engineering](https://github.com/mboyajeffers/financial-data-engineering) | Engineering | ETL pipeline code, data quality framework, star schema modeling, 68 tests |
-| [financial-market-analysis](https://github.com/mboyajeffers/financial-market-analysis) | Analysis | 33 intelligence reports (PDFs), report generators, enterprise showcase |
+| [financial-market-analysis](https://github.com/mboyajeffers/financial-market-analysis) | Analysis | 89 intelligence reports (PDFs), report generators, enterprise showcase |
 
 ---
 
